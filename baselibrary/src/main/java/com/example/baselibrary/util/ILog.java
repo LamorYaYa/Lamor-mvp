@@ -1,4 +1,4 @@
-package com.example.baselibrary;
+package com.example.baselibrary.util;
 
 import android.text.TextUtils;
 import android.util.Log;

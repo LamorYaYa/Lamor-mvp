@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.example.baselibrary.R;
+import com.example.baselibrary.interfa.MultiStateLayout;
 
 /**
  * Create by Administrator
@@ -81,21 +82,28 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
     }
 
     public void showContanterView() {
-        iContainerView.setVisibility(View.VISIBLE);
-        iEmptyView.setVisibility(View.GONE);
-        iErrorView.setVisibility(View.GONE);
+        if (this instanceof MultiStateLayout) {
+            iContainerView.setVisibility(View.VISIBLE);
+            iEmptyView.setVisibility(View.GONE);
+            iErrorView.setVisibility(View.GONE);
+        }
     }
 
     public void showEmptyView() {
-        iContainerView.setVisibility(View.GONE);
-        iEmptyView.setVisibility(View.VISIBLE);
-        iErrorView.setVisibility(View.GONE);
+        if (this instanceof MultiStateLayout) {
+            iContainerView.setVisibility(View.GONE);
+            iEmptyView.setVisibility(View.VISIBLE);
+            iErrorView.setVisibility(View.GONE);
+        }
+
     }
 
     public void showErrorView() {
-        iContainerView.setVisibility(View.GONE);
-        iEmptyView.setVisibility(View.GONE);
-        iErrorView.setVisibility(View.VISIBLE);
+        if (this instanceof MultiStateLayout) {
+            iContainerView.setVisibility(View.GONE);
+            iEmptyView.setVisibility(View.GONE);
+            iErrorView.setVisibility(View.VISIBLE);
+        }
     }
 
 

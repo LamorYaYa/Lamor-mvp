@@ -4,12 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.baselibrary.ILog;
+import com.example.baselibrary.util.ILog;
 import com.example.baselibrary.base.BaseActivity;
+import com.example.baselibrary.interfa.MultiStateLayout;
 import com.example.lamor.constant.MainActivityConstant;
 import com.example.lamor.constant.MainActivityPresenter;
 
-public class MainActivity extends BaseActivity<MainActivityConstant.MainActivityView, MainActivityPresenter> implements MainActivityConstant.MainActivityView {
+public class MainActivity extends BaseActivity<MainActivityConstant.MainActivityView, MainActivityPresenter> implements MainActivityConstant.MainActivityView, MultiStateLayout {
 
     @Override
     protected MainActivityPresenter createPresenter() {
